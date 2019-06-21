@@ -11,13 +11,13 @@ export default class Song {
 
     get Template() {
         return `
-        <div class="col-4">
+        <div class="col" m-2>
             <div class="card" style="width: 18rem;">
                 <img src=${this.albumArt} class="card-img-top" alt="albumArt">
                 <div class="card-body">
                     <h5 class="card-title">${this.artist}</h5>
-                    <p class="card-text">${this.title}</p>
-                    <p class="card-text">${this.collection}</p>
+                    <h6 class="card-text">${this.title}</h6>
+                    <h6 class="card-text">${this.collection}</h6>
                     <p class="card-text">${this.price}</p>
                     <audio controls src=${this.preview}>
                         Your browser does not support the

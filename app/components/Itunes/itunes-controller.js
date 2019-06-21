@@ -16,6 +16,15 @@ function drawSongs() {
   itunesElem.innerHTML = template
 }
 
+// eventListener here for stopping current song when playing a new one
+let previousAudio;
+document.addEventListener('play', function (e) {
+  if (previousAudio && previousAudio != e.target) {
+    previousAudio.pause();
+  }
+  previousAudio = e.target;
+}, true);
+
 
 //PUBLIC
 export default class ItunesController {
@@ -33,5 +42,6 @@ export default class ItunesController {
     //changes the button to loading while songs load
     document.querySelector('#get-music-button').textContent = 'LOADING....'
     _itunesService.getMusicByArtist(artist)
+    e.target.reset()
   }
 }
