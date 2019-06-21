@@ -18,11 +18,13 @@ function drawSongs() {
 
 
 //PUBLIC
-class ItunesController {
+export default class ItunesController {
   constructor() {
     //BE SURE TO REGISTER YOUR SUBSCRIBERS!!!!!!!
+    console.log("itunes controller works")
+    _itunesService.addSubscriber("songs", drawSongs)
+    drawSongs()
   }
-
 
   //DO NOT MODIFY THIS METHOD
   getMusic(e) {
@@ -33,6 +35,3 @@ class ItunesController {
     _itunesService.getMusicByArtist(artist)
   }
 }
-
-
-export default ItunesController

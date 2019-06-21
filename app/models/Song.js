@@ -11,9 +11,21 @@ export default class Song {
 
     get Template() {
         return `
-        ul id="song-list">
-        <!--SONGS ADDED DYNAMICALLY HERE-->
-        </ul>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src=${this.albumArt} class="card-img-top" alt="albumArt">
+                <div class="card-body">
+                    <h5 class="card-title">${this.artist}</h5>
+                    <p class="card-text">${this.title}</p>
+                    <p class="card-text">${this.collection}</p>
+                    <p class="card-text">${this.price}</p>
+                    <audio controls src=${this.preview}>
+                        Your browser does not support the
+                        <code>audio</code> element.
+                    </audio>
+                </div>
+            </div>
+        </div>
         `
     }
 }
