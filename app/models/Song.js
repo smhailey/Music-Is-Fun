@@ -8,4 +8,12 @@ export default class Song {
         this.price = song.collectionPrice
         this.preview = song.previewUrl
     }
+
+    get Template() {
+        return `
+        ul id="song-list">
+        <!--SONGS ADDED DYNAMICALLY HERE-->
+        </ul>
+        `
+    }
 }

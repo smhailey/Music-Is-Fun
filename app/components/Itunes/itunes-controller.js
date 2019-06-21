@@ -1,12 +1,19 @@
 import ItunesService from "./itunes-service.js";
 //Private
-const itunesService = new ItunesService()
+let _itunesService = new ItunesService()
 
 function drawSongs() {
   //changes button back to GET MUSIC once songs are loaded
   document.querySelector('#get-music-button').textContent = 'GET MUSIC'
-  console.log(itunesService.Songs)
+  console.log(_itunesService.Songs)
 
+  let itunesElem = document.querySelector("#songs")
+  let template = ''
+  let itunes = _itunesService.Songs
+  itunes.forEach(song => {
+    template += song.Template
+  })
+  itunesElem.innerHTML = template
 }
 
 
@@ -20,10 +27,10 @@ class ItunesController {
   //DO NOT MODIFY THIS METHOD
   getMusic(e) {
     e.preventDefault();
-    var artist = e.target.artist.value;
+    let artist = e.target.artist.value;
     //changes the button to loading while songs load
     document.querySelector('#get-music-button').textContent = 'LOADING....'
-    itunesService.getMusicByArtist(artist)
+    _itunesService.getMusicByArtist(artist)
   }
 }
 
