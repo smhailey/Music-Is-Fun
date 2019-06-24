@@ -10,25 +10,15 @@ export default class Song {
     }
 
     get Template() {
-        /**
-         * REVIEW 
-         * you could add an onclick to this template that passes the 
-         * this.preview to a play method in your itunes controller
-         * this helps to limit the data consumption
-         */
         return `
         <div class="col" m-2>
             <div class="card" style="width: 18rem;">
-                <img src=${this.albumArt} class="card-img-top" alt="albumArt">
+                <img onclick="app.controllers.itunesCtrl.playSong('${this.preview}')" src=${this.albumArt} class="card-img-top" alt="albumArt">
                 <div class="card-body">
                     <h4 class="card-title">${this.artist}</h4>
                     <h5 class="card-text">${this.title}</h5>
                     <h6 class="card-text">${this.collection}</h6>
                     <p class="card-text">${this.price}</p>
-                    <audio controls src=${this.preview}>
-                        Your browser does not support the
-                        <code>audio</code> element.
-                    </audio>
                 </div>
             </div>
         </div>

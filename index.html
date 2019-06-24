@@ -8,6 +8,7 @@
     <title>Music Is Fun!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <!-- TODO: Move CSS to an external file -->
     <!-- <style>
         * {
@@ -22,7 +23,7 @@
 
 <body>
 
-    <!-- REVIEW only use a single audio tag for the entire page, Dynamically set the src attribute of this one tag -->
+    <audio controls src="" id="song-audio"></audio>
 
     <form class="form-inline" onsubmit="app.controllers.itunesCtrl.getMusic(event)">
         <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->

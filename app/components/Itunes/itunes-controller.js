@@ -16,16 +16,6 @@ function drawSongs() {
   itunesElem.innerHTML = template
 }
 
-// eventListener here for stopping current song when playing a new one
-let previousAudio;
-document.addEventListener('play', function (e) {
-  if (previousAudio && previousAudio != e.target) {
-    previousAudio.pause();
-  }
-  previousAudio = e.target;
-}, true);
-
-
 //PUBLIC
 export default class ItunesController {
   constructor() {
@@ -45,7 +35,7 @@ export default class ItunesController {
     e.target.reset()
   }
 
-  // REVIEW play(previewURl)
-  // get the one audio element off of the page and set its src
-  // then call play on the element
+  playSong(preview) {
+    return _itunesService.playSong(preview)
+  }
 }

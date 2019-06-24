@@ -16,6 +16,11 @@ function setState(prop, data) {
 
 //DO NOT MODIFY
 class ItunesService {
+  playSong(preview) {
+    let audioTag = document.getElementById("song-audio")
+    audioTag.setAttribute("src", preview)
+    audioTag.play()
+  }
   get Songs() {
     return _state.songs
   }

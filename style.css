@@ -1,0 +1,7 @@
+/* * {outline: 1px solid red} */
+
+audio {width: 100%;}
+
+.card-img-top:hover{
+  cursor: pointer;
+}
