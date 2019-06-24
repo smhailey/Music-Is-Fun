@@ -8,9 +8,22 @@
     <title>Music Is Fun!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- TODO: Move CSS to an external file -->
+    <!-- <style>
+        * {
+            outline: 1px solid red
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style> -->
 </head>
 
 <body>
+
+    <!-- REVIEW only use a single audio tag for the entire page, Dynamically set the src attribute of this one tag -->
+
     <form class="form-inline" onsubmit="app.controllers.itunesCtrl.getMusic(event)">
         <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
         <div class="form-group">
@@ -18,7 +31,8 @@
             <button type="submit" class="btn btn-danger rounded-pill" id="get-music-button">Get Music</button>
         </div>
     </form>
-    <div class="row" id="songs">
+    <div class="container">
+        <div class="row" id="songs"></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="module" src="app/main.js"></script>

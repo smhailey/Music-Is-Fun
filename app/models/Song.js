@@ -10,6 +10,12 @@ export default class Song {
     }
 
     get Template() {
+        /**
+         * REVIEW 
+         * you could add an onclick to this template that passes the 
+         * this.preview to a play method in your itunes controller
+         * this helps to limit the data consumption
+         */
         return `
         <div class="col" m-2>
             <div class="card" style="width: 18rem;">

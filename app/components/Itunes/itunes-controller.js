@@ -44,4 +44,8 @@ export default class ItunesController {
     _itunesService.getMusicByArtist(artist)
     e.target.reset()
   }
+
+  // REVIEW play(previewURl)
+  // get the one audio element off of the page and set its src
+  // then call play on the element
 }
